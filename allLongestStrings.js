@@ -1,19 +1,18 @@
 function allLongestStrings(inputArray) {
-    let longest = []
-    let num = 0
-    let answer = []
+    let longest 
+    let newArr = []
+    longest = inputArray[0]
     for(let i = 0; i < inputArray.length; i++){
-        longest.push(inputArray[i].length)
-    }
-    console.log(longest)
-    longest.max = (arr) => Math.max.apply(Math, arr)
-    console.log(longest)
-    for(let i = 0; i < inputArray.length; i++){
-        if(inputArray[i].length === num){
-            answer.push(inputArray[i])
+        if(inputArray[i].length > longest.length){
+            longest = inputArray[i]
         }
     }
-    console.log(answer)
+    for(let i = 0; i < inputArray.length; i++){
+        if(inputArray[i].length === longest.length){
+            newArr.push(inputArray[i])
+        }
+    }
+    console.log(newArr)
 }
 
-allLongestStrings(["aba", "aa", "ad", "vcd", "aba"])
+allLongestStrings(["aba", "aa", "sad", "vcd", "aba"])
